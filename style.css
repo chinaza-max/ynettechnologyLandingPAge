@@ -41,7 +41,7 @@ body {
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    background-image: url("/ynettech.jpg");
+    background-image: url("/assets/images/ynettech.jpg");
     background-size: cover; /* Make the background image cover the entire area */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -473,9 +473,9 @@ body {
 }
 
 
-
+    
 .section2 >div{
-    width: 90%;
+    width: 90%;  
     height: auto;
     margin: 0 auto;
     margin-top: 50px;
