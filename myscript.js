@@ -680,7 +680,7 @@ $(document).ready(function() {
 
       
 
-
+/*
 var string = "Welcome to Ynet Group";
 var array = string.split("");
 var timer;
@@ -689,10 +689,11 @@ function frameLooper() {
     if (array.length > 0) {
       document.getElementById("section2Text").innerHTML += array.shift();
       timer = setTimeout(frameLooper, 70); /* Pass function reference here */
-    } else {
+   /* } else {
       clearTimeout(timer); // Stop the timer when array is empty
     }
   }
+  */
   
 
 
