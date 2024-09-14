@@ -43,7 +43,7 @@ body {
     overflow: hidden;
     background-image: url("/assets/images/ynettech.jpg");
     background-size: cover; /* Make the background image cover the entire area */
-    background-position: center; /* Center the image */
+    background-position: center; /* Center the image */  
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-attachment: fixed; /* Makes the background image stay fixed when scrolling */
     background-color: #f0f0f0;
