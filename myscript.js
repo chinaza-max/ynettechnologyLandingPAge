@@ -696,7 +696,8 @@ function frameLooper() {
   */
   
 
-
+        //https://codepen.io/Azametzin/pen/mdarMWE
+        //https://codepen.io/daniel-mu-oz/pen/NWZqpoW
 
   $(window).on("scroll", function() {
     var scrollPosition = $(this).scrollTop();
