@@ -20,9 +20,6 @@ body {
   height: 100%;
   font-family: 'Roboto', sans-serif;
 }
-body{
-  overflow-x: hidden;
-}
 
 .container-fluid{
     padding-right:0  !important;
@@ -405,8 +402,9 @@ body{
     }
     100% {
       background-position: 180px;
+    }
   }
-}
+
 
 
 .section2 {
@@ -420,7 +418,9 @@ body{
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
+   /* background-image: url(/assets/images/building.png);*/
 }
+
 
 
 .section2 .section2Container2 .div2{
@@ -961,9 +961,6 @@ body{
 
 /*https://codepen.io/mtsgeneroso/pen/YzGYdVr*/
 
-.section3{
-  overflow-x: hidden;
-}
 
 .section3 .container {
   max-width: 1170px;
