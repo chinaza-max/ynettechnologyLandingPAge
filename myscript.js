@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#menu').click(function() {
+   $('#menu').click(function() {
         $('.navContent2').slideToggle(); 
     });
 
@@ -658,7 +658,7 @@ $(document).ready(function() {
         //https://codepen.io/mtsgeneroso/pen/YzGYdVr
         /**END SECOND SPIN */
 
-
+/*
         setTimeout(() => {
           
         var heading = $('#our-services .desc .heading h1'),
@@ -671,12 +671,131 @@ $(document).ready(function() {
             .from(txt, 0.3, {opacity : 0, y : -20})
             .staggerFrom(serviceItem, 0.2, {x : -10, autoAlpha : 0}, 0.1);
             
-        }, 10000);
+        }, 10000);*/
+
+        function loadSection4(){
+               
+        var heading = $('#our-services .desc .heading h1'),
+        txt = $('#our-services .desc .text'),
+        serviceItem = $('#our-services .services .column .service'),
+        tl = new TimelineLite();
+
+        tl
+            .from(heading, 0.3, {opacity : 0, y : -20}, '+=0.3')
+            .from(txt, 0.3, {opacity : 0, y : -20})
+            .staggerFrom(serviceItem, 0.2, {x : -10, autoAlpha : 0}, 0.1);
+        }
         
         
 
 
 
+        const navLinks = document.querySelectorAll('.navContent a, .navContent2 a');
+        const menuToggle = document.querySelector('#menu');
+        const navContent2 = document.querySelector('.navContent2');
+    
+        // Function to handle smooth scrolling
+        function smoothScroll(targetId) {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    
+        // Handle click events on nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+    
+                // Check if it's an internal link (starts with #)
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    smoothScroll(href.substring(1));
+                } else if (href.includes('#')) {
+                    // It's a link to another page with a specific section
+                    const [page, section] = href.split('#');
+                    if (page === 'index.html' && window.location.pathname.endsWith('index.html')) {
+                        e.preventDefault();
+                        smoothScroll(section);
+                    }
+                    // If it's not the index page, let the default behavior happen
+                }
+                // For external links (like contact.html), let the default behavior happen
+            });
+        });
+    
+        // Toggle mobile menu
+        if (menuToggle) {
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent the click from propagating to the document
+                navContent2.classList.toggle('show-menu');
+            });
+    
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!menuToggle.contains(e.target) && navContent2.classList.contains('show-menu')) {
+                    navContent2.classList.remove('show-menu');
+                }
+            });
+    
+            // Prevent menu from closing when clicking inside navContent2
+            navContent2.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+    
+        // Handle smooth scrolling when coming from another page
+        if (window.location.hash) {
+            const targetId = window.location.hash.substring(1);
+            smoothScroll(targetId);
+        }
+
+
+
+
+
+
+
+
+
+    
+/*
+    // Handle click events on nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            // Check if it's an internal link (starts with #)
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                smoothScroll(href.substring(1));
+            } else if (href.includes('#')) {
+                // It's a link to another page with a specific section
+                const [page, section] = href.split('#');
+                if (page === 'index.html' && window.location.pathname.endsWith('index.html')) {
+                    e.preventDefault();
+                    smoothScroll(section);
+                }
+                // If it's not the index page, let the default behavior happen
+            }
+            // For external links (like contact.html), let the default behavior happen
+        });
+    });
+
+    // Toggle mobile menu
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navContent2.style.display = navContent2.style.display === 'block' ? 'none' : 'block';
+        });
+    }*/
+
+    // Handle smooth scrolling when coming from another page
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        smoothScroll(targetId);
+    }
 
       
 
@@ -695,6 +814,8 @@ function frameLooper() {
   }
   */
   
+  //loadSection4()
+  let hasLoadSection4 =1
 
         //https://codepen.io/Azametzin/pen/mdarMWE
         //https://codepen.io/daniel-mu-oz/pen/NWZqpoW
@@ -711,8 +832,14 @@ function frameLooper() {
 
 
     // For desktop, add the 'scrolled' class
-    if (scrollPosition > 170) {
-        frameLooper()
+    if (scrollPosition > 1888) {
+
+      if(hasLoadSection4){
+        loadSection4()
+        hasLoadSection4 =0
+
+      }
+     
 
     }
     } else {
