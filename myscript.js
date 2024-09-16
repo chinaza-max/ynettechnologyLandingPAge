@@ -3,6 +3,9 @@ $(document).ready(function() {
         $('.navContent2').slideToggle(); 
     });
 
+    AOS.init();
+
+
           
 
 
