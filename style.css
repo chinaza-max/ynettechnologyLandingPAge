@@ -1134,9 +1134,9 @@ body {
 }
 
 .section4 h3{
-  margin: 50px 0px 90px 0px ;
+  margin: 50px 0px 40px 0px ;
   text-align: center;
-  font-weight: 500; 
+  font-weight: 700; 
   font-family: 'Roboto', sans-serif;
 }
 .section4 .section4Container{
@@ -1147,6 +1147,9 @@ body {
   gap: 50px; 
   justify-content: space-between;
   margin-top: 40px;
+  padding-top: 50px;
+  overflow-x: hidden;
+  padding-bottom: 20px;
 }
 
 .section4 .section4Container div  p{
