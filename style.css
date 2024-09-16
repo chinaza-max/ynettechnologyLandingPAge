@@ -19,7 +19,6 @@ html,
 body {
   height: 100%;
   font-family: 'Roboto', sans-serif;
-
 }
 body{
   overflow-x: hidden;
@@ -406,9 +405,8 @@ body{
     }
     100% {
       background-position: 180px;
-    }
   }
-
+}
 
 
 .section2 {
@@ -422,9 +420,7 @@ body{
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
-    overflow-x: hidden;
 }
-
 
 
 .section2 .section2Container2 .div2{
